@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectOptions>
-    <Version Value="10"/>
+    <Version Value="12"/>
     <PathDelim Value="\"/>
     <General>
-      <MainUnit Value="0"/>
+      <Flags>
+        <CompatibilityMode Value="True"/>
+      </Flags>
       <Title Value="TetraPlot"/>
       <UseXPManifest Value="True"/>
       <Icon Value="0"/>
@@ -19,22 +21,26 @@
       <MajorVersionNr Value="1"/>
       <MinorVersionNr Value="7"/>
       <BuildNr Value="2"/>
-      <StringTable CompanyName="Naoyuki Hatada" FileDescription="TetraPlot" InternalName="TetraPlot" ProductName="TetraPlot" ProductVersion="1.6.0.2"/>
+      <StringTable CompanyName="Naoyuki Hatada" FileDescription="TetraPlot" InternalName="TetraPlot" ProductName="TetraPlot"/>
     </VersionInfo>
     <BuildModes Count="1">
       <Item1 Name="default" Default="True"/>
     </BuildModes>
     <PublishOptions>
       <Version Value="2"/>
-      <IgnoreBinaries Value="False"/>
-      <IncludeFileFilter Value="*.(pas|pp|inc|lfm|lpr|lrs|lpi|lpk|sh|xml)"/>
-      <ExcludeFileFilter Value="*.(bak|ppu|ppw|o|so);*~;backup"/>
     </PublishOptions>
     <RunParams>
       <local>
-        <FormatVersion Value="1"/>
-        <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
+        <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T &apos;Lazarus Run Output&apos; -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
       </local>
+      <FormatVersion Value="2"/>
+      <Modes Count="1">
+        <Mode0 Name="default">
+          <local>
+            <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T &apos;Lazarus Run Output&apos; -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
+          </local>
+        </Mode0>
+      </Modes>
     </RunParams>
     <RequiredPackages Count="2">
       <Item1>
@@ -177,8 +183,8 @@
         <Filename Value="C:\lazarus\lcl\defaulttranslator.pas"/>
         <UnitName Value="DefaultTranslator"/>
         <EditorIndex Value="4"/>
-        <TopLine Value="41"/>
-        <CursorPos X="35" Y="40"/>
+        <TopLine Value="25"/>
+        <CursorPos X="35" Y="24"/>
         <UsageCount Value="39"/>
         <Loaded Value="True"/>
       </Unit17>
