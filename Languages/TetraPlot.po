@@ -1,0 +1,289 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8"
+
+#: tformdiagram.buttondown.caption
+msgid "↓"
+msgstr ""
+
+#: tformdiagram.buttonleft.caption
+msgid "←"
+msgstr ""
+
+#: tformdiagram.buttonprintimage.caption
+msgid "Print image"
+msgstr ""
+
+#: tformdiagram.buttonright.caption
+msgid "→"
+msgstr ""
+
+#: tformdiagram.buttonsaveimage.caption
+msgid "Save image"
+msgstr ""
+
+#: tformdiagram.buttonup.caption
+msgid "↑"
+msgstr ""
+
+#: tformdiagram.caption
+msgctxt "tformdiagram.caption"
+msgid "TetraPlot - Diagram"
+msgstr ""
+
+#: tformdiagram.label1.caption
+msgid "Rotation Angle"
+msgstr ""
+
+#: tformdiagram.menuitem12.caption
+msgid "12"
+msgstr ""
+
+#: tformdiagram.menuitem13.caption
+msgid "13"
+msgstr ""
+
+#: tformdiagram.menuitem14.caption
+msgid "14"
+msgstr ""
+
+#: tformdiagram.menuitem21.caption
+msgid "21"
+msgstr ""
+
+#: tformdiagram.menuitem23.caption
+msgid "23"
+msgstr ""
+
+#: tformdiagram.menuitem24.caption
+msgid "24"
+msgstr ""
+
+#: tformdiagram.menuitem31.caption
+msgid "31"
+msgstr ""
+
+#: tformdiagram.menuitem32.caption
+msgid "32"
+msgstr ""
+
+#: tformdiagram.menuitem34.caption
+msgid "34"
+msgstr ""
+
+#: tformdiagram.menuitem41.caption
+msgid "41"
+msgstr ""
+
+#: tformdiagram.menuitem42.caption
+msgid "42"
+msgstr ""
+
+#: tformdiagram.menuitem43.caption
+msgid "43"
+msgstr ""
+
+#: tformdiagram.menuitempresets.caption
+msgid "Preset angles (Front - Top)"
+msgstr ""
+
+#: tformmain.buttonaddrows.caption
+msgid "Add 50 rows"
+msgstr ""
+
+#: tformmain.buttonaddseries.caption
+msgid "Add"
+msgstr ""
+
+#: tformmain.buttonaxismovedown.caption
+msgctxt "tformmain.buttonaxismovedown.caption"
+msgid "Down"
+msgstr ""
+
+#: tformmain.buttonaxismoveup.caption
+msgctxt "tformmain.buttonaxismoveup.caption"
+msgid "Up"
+msgstr ""
+
+#: tformmain.buttonremoveseries.caption
+msgid "Remove"
+msgstr ""
+
+#: tformmain.buttonseriesmovedown.caption
+msgctxt "tformmain.buttonseriesmovedown.caption"
+msgid "Down"
+msgstr ""
+
+#: tformmain.buttonseriesmoveup.caption
+msgctxt "tformmain.buttonseriesmoveup.caption"
+msgid "Up"
+msgstr ""
+
+#: tformmain.caption
+msgctxt "TFORMMAIN.CAPTION"
+msgid "TetraPlot"
+msgstr ""
+
+#: tformmain.checkboxaxistitlevisible.caption
+msgctxt "TFORMMAIN.CHECKBOXAXISTITLEVISIBLE.CAPTION"
+msgid "Show"
+msgstr ""
+
+#: tformmain.checkboxchangefontsizewithdistance.caption
+msgid "Change font size with distance"
+msgstr ""
+
+#: tformmain.checkboxcomplabelvisible.caption
+msgctxt "TFORMMAIN.CHECKBOXCOMPLABELVISIBLE.CAPTION"
+msgid "Show"
+msgstr ""
+
+#: tformmain.checkboxlineclose.caption
+msgid "Close"
+msgstr ""
+
+#: tformmain.checkboxlinevisible.caption
+msgctxt "TFORMMAIN.CHECKBOXLINEVISIBLE.CAPTION"
+msgid "Show"
+msgstr ""
+
+#: tformmain.checkboxsmalltetrahedron.caption
+msgid "Show small tetrahedron"
+msgstr ""
+
+#: tformmain.checkboxsymbolvisible.caption
+msgctxt "TFORMMAIN.CHECKBOXSYMBOLVISIBLE.CAPTION"
+msgid "Show"
+msgstr ""
+
+#: tformmain.editseriestitle.editlabel.caption
+msgctxt "TFORMMAIN.EDITSERIESTITLE.EDITLABEL.CAPTION"
+msgid "Series title"
+msgstr ""
+
+#: tformmain.groupboxaxistitles.caption
+msgid "Axis titles"
+msgstr ""
+
+#: tformmain.groupboxcomplabel.caption
+msgid "Label"
+msgstr ""
+
+#: tformmain.groupboxline.caption
+msgid "Line"
+msgstr ""
+
+#: tformmain.groupboxseriesdetails.caption
+msgid "Details of the selected series"
+msgstr ""
+
+#: tformmain.groupboxserieslist.caption
+msgid "Series list"
+msgstr ""
+
+#: tformmain.groupboxsymbol.caption
+msgid "Symbol"
+msgstr ""
+
+#: tformmain.label1.caption
+msgid "Type"
+msgstr ""
+
+#: tformmain.label10.caption
+msgid "Mode"
+msgstr ""
+
+#: tformmain.label2.caption
+msgctxt "TFORMMAIN.LABEL2.CAPTION"
+msgid "Size"
+msgstr ""
+
+#: tformmain.label3.caption
+msgid "Coordinate data (automatically normalized)"
+msgstr ""
+
+#: tformmain.label4.caption
+msgid "Font size"
+msgstr ""
+
+#: tformmain.label5.caption
+msgid "Edge color"
+msgstr ""
+
+#: tformmain.label6.caption
+msgid "Fill color"
+msgstr ""
+
+#: tformmain.label7.caption
+msgid "Width"
+msgstr ""
+
+#: tformmain.label8.caption
+msgid "Color"
+msgstr ""
+
+#: tformmain.label9.caption
+msgctxt "TFORMMAIN.LABEL9.CAPTION"
+msgid "Size"
+msgstr ""
+
+#: tformmain.menuitemabout.caption
+msgid "About (&A)"
+msgstr ""
+
+#: tformmain.menuitemfile.caption
+msgid "File (&F)"
+msgstr ""
+
+#: tformmain.menuitemhelp.caption
+msgid "Help (&H)"
+msgstr ""
+
+#: tformmain.menuitemopen.caption
+msgid "Open (&O)"
+msgstr ""
+
+#: tformmain.menuitemsave.caption
+msgid "Save As (&S)"
+msgstr ""
+
+#: unitformmain.rsabouttetrapl
+msgid "About TetraPlot"
+msgstr ""
+
+#: unitformmain.rsaxis
+msgid "Axis"
+msgstr ""
+
+#: unitformmain.rsdonotoverwri
+msgid "Do not overwrite the file because some data can be lost. "
+msgstr ""
+
+#: unitformmain.rsexceededmaxi
+msgid "Exceeded maximum number of series!"
+msgstr ""
+
+#: unitformmain.rsexceededmaxi2
+msgid "Exceeded maximum number of coodinates! "
+msgstr ""
+
+#: unitformmain.rslabeloptional
+msgid "Label (optional)"
+msgstr ""
+
+#: unitformmain.rspleaseuseane
+msgid "Please use a newer version of TetraPlot."
+msgstr ""
+
+#: unitformmain.rsquittetraplo
+msgid "Quit TetraPlot?"
+msgstr ""
+
+#: unitformmain.rsseriestitle
+msgctxt "unitformmain.rsseriestitle"
+msgid "Series title"
+msgstr ""
+
+#: unitformmain.rswarning
+msgid "Warning"
+msgstr ""
+
