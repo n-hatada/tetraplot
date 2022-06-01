@@ -1,0 +1,11 @@
+
+*.compiled
+*.o
+*.obj
+*.res
+*.exe
+*.lrs
+*.ppu
+*.rsj
+backup/prjtetraplot.lpr
+backup/prjtetraplot.lpi
