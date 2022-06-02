@@ -1,14 +1,15 @@
 msgid ""
 msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
 "Last-Translator: Naoyuki\n"
 "Language-Team: \n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: tformdiagram.buttondown.caption
 msgid "↓"
@@ -20,7 +21,7 @@ msgstr ""
 
 #: tformdiagram.buttonprintimage.caption
 msgid "Print image"
-msgstr ""
+msgstr "画像を印刷"
 
 #: tformdiagram.buttonright.caption
 msgid "→"
@@ -28,19 +29,20 @@ msgstr ""
 
 #: tformdiagram.buttonsaveimage.caption
 msgid "Save image"
-msgstr ""
+msgstr "画像を保存"
 
 #: tformdiagram.buttonup.caption
 msgid "↑"
 msgstr ""
 
 #: tformdiagram.caption
+msgctxt "tformdiagram.caption"
 msgid "TetraPlot - Diagram"
-msgstr ""
+msgstr "TetraPlot - 図"
 
 #: tformdiagram.label1.caption
 msgid "Rotation Angle"
-msgstr ""
+msgstr "回転角度"
 
 #: tformdiagram.menuitem12.caption
 msgid "12"
@@ -91,8 +93,9 @@ msgid "43"
 msgstr ""
 
 #: tformdiagram.menuitempresets.caption
+msgctxt "TFORMDIAGRAM.MENUITEMPRESETS.CAPTION"
 msgid "Preset angles (Front - Top)"
-msgstr ""
+msgstr "プリセット角度 (手前 - 上)"
 
 #: tformmain.buttonaddrows.caption
 msgid "Add 50 rows"
@@ -283,4 +286,3 @@ msgstr "系列名"
 #: unitformmain.rswarning
 msgid "Warning"
 msgstr "警告"
-
