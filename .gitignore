@@ -9,3 +9,7 @@
 *.rsj
 backup/prjtetraplot.lpr
 backup/prjtetraplot.lpi
+backup/unittetraplotcore.pas
+backup/unitformmain.lfm
+backup/unitformmain.pas
+*.lrj
