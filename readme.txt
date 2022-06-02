@@ -1,6 +1,6 @@
 			=======================
-			TetraPlot Version 1.7.0
-				   Nov. 19, 2018
+			TetraPlot Version 1.7.1
+				   Jun. 3, 2022
 				 Naoyuki Hatada
 			=======================
 
@@ -10,8 +10,7 @@ TetraPlot is a program for plotting chemical compositions in 4 component systems
 
  Operating System
 ==================
-Windows XP or higher.
-(Tested on Windows XP, Windows 7, and Windows 10.)
+Microsoft Windows 7 or higher (64 bit)
 
  Installation
 ==============
@@ -35,8 +34,16 @@ Please open the sample tpxml file to see an example of tetrahedral diagrams.
 ===========================
 TetraPlot currently does not have a function to export vector graphics. However, you can get vector graphics by printing diagrams to some virtual printers which can save *.emf, *.eps, or *.svg files.
 
+ License
+=========
+This software is licensed under the MIT License. 
+
  Version History
 =================
+Version 1.7.1
+-Some unused code is removed.
+-Now available on GitHub.
+
 Version 1.7.0
 -Font size can be changed according to the distance from viewpoint.
 
