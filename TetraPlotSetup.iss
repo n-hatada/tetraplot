@@ -7,14 +7,14 @@
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
 AppId={{71D51ED1-5151-4930-8D54-31D34922242F}
 AppName=TetraPlot
-AppVerName=TetraPlot 1.7.0
+AppVerName=TetraPlot 1.7.1
 AppPublisher=Naoyuki Hatada
-AppPublisherURL=http://www.aqua.mtl.kyoto-u.ac.jp/
-AppSupportURL=http://www.aqua.mtl.kyoto-u.ac.jp/
-AppUpdatesURL=http://www.aqua.mtl.kyoto-u.ac.jp/
+AppPublisherURL=https://github.com/n-hatada/tetraplot
+AppSupportURL=https://github.com/n-hatada/tetraplot
+AppUpdatesURL=https://github.com/n-hatada/tetraplot
 DefaultDirName={pf}\TetraPlot
 DefaultGroupName=TetraPlot
-OutputBaseFilename=TetraPlot1.7.0_Setup
+OutputBaseFilename=TetraPlot1.7.1_Setup
 SetupIconFile=prjtetraplot.ico
 Compression=lzma
 SolidCompression=yes
