@@ -169,12 +169,12 @@ resourcestring
   rsAxis = 'Axis';
   rsLabelOptional = 'Label (optional)';
   rsWarning = 'Warning';
-  rsExceededMaxi = 'Exceeded maximum number of series!';
+  //rsExceededMaxi = 'Exceeded maximum number of series!';
   rsQuitTetraPlo = 'Quit TetraPlot?';
   rsSeriesTitle = 'Series title';
   rsAboutTetraPl = 'About TetraPlot';
-  rsExceededMaxi2 = 'Exceeded maximum number of coodinates! ';
-  rsDoNotOverwri = 'Do not overwrite the file because some data can be lost. ';
+  //rsExceededMaxi2 = 'Exceeded maximum number of coodinates! ';
+  //rsDoNotOverwri = 'Do not overwrite the file because some data can be lost. ';
   rsPleaseUseANe = 'Please use a newer version of TetraPlot.';
 
 implementation
@@ -273,20 +273,18 @@ begin
       break;
     end;
   end;
-
 end;
 
 procedure TFormMain.ButtonAddSeriesClick(Sender: TObject);
 //Addボタンクリック時（系列を追加する）
+var
+  NewSeries: TSeries;
 begin
-  //系列の追加を試みる
-  if TetraSystem.AddSeries then
-  begin
-    //追加に成功したとき
-    CheckListBoxSeries.Items.Add(TetraSystem.Series[TetraSystem.nSeries - 1].Name);
-    TetraSystem.Series[TetraSystem.nSeries - 1].Visible := True;
-    CheckListBoxSeries.Checked[CheckListBoxSeries.Count - 1] := True;
-  end;
+  //系列を追加する
+  NewSeries := TetraSystem.Series[TetraSystem.AddSeries];
+  CheckListBoxSeries.Items.Add(NewSeries.Name);
+  NewSeries.Visible := True;
+  CheckListBoxSeries.Checked[CheckListBoxSeries.Count - 1] := True;
 end;
 
 //"Add rows"ボタンが押されたとき
@@ -311,11 +309,11 @@ begin
       break;
     end;
   end;
-  if AxisNumBefore=3 then exit;
+  if AxisNumBefore = 3 then exit;
   AxisNumAfter := AxisNumBefore + 1;
   TryExchangeAxes(Sender, AxisNumBefore, AxisNumAfter);
-  StringGridAxisTitles.Col:=1;
-  StringGridAxisTitles.Row:=AxisNumAfter;
+  StringGridAxisTitles.Col := 1;
+  StringGridAxisTitles.Row := AxisNumAfter;
   StringGridAxisTitles.SetFocus;
 end;
 
@@ -333,11 +331,11 @@ begin
       break;
     end;
   end;
-  if AxisNumBefore=0 then exit;
+  if AxisNumBefore = 0 then exit;
   AxisNumAfter := AxisNumBefore - 1;
   TryExchangeAxes(Sender, AxisNumBefore, AxisNumAfter);
-  StringGridAxisTitles.Col:=1;
-  StringGridAxisTitles.Row:=AxisNumAfter;
+  StringGridAxisTitles.Col := 1;
+  StringGridAxisTitles.Row := AxisNumAfter;
   StringGridAxisTitles.SetFocus;
 end;
 
@@ -373,18 +371,18 @@ end;
 procedure TFormMain.TryExchangeSeries(Sender: TObject;
   const SeriesNumSelected, SeriesNumTarget: integer);
 begin
-  if (Min(SeriesNumSelected, SeriesNumTarget) >= 0) and (Max(SeriesNumSelected, SeriesNumTarget) <=
-    CheckListBoxSeries.Count - 1) then
+  if (Min(SeriesNumSelected, SeriesNumTarget) >= 0) and
+    (Max(SeriesNumSelected, SeriesNumTarget) <= CheckListBoxSeries.Count - 1) then
   begin
     //系列を入れ替える
     TetraSystem.TryExchangeSeries(SeriesNumSelected, SeriesNumTarget);
     CheckListBoxSeries.Items.Exchange(SeriesNumSelected, SeriesNumTarget);
     //もともと選択されていた系列を選択
-    CheckListBoxSeries.Selected[SeriesNumTarget]:=True;
+    CheckListBoxSeries.Selected[SeriesNumTarget] := True;
     ButtonSeriesMoveUp.Enabled := (SeriesNumTarget > 0);
-  ButtonSeriesMoveDown.Enabled := (SeriesNumTarget < CheckListBoxSeries.Count - 1);
-  //図を更新する
-  FormDiagram.DrawDiagram;
+    ButtonSeriesMoveDown.Enabled := (SeriesNumTarget < CheckListBoxSeries.Count - 1);
+    //図を更新する
+    FormDiagram.DrawDiagram;
   end;
 
 end;
@@ -541,13 +539,6 @@ begin
   //stringgridに反映
   for i := 0 to TetraSystem.Series[SelNum].nComposition - 1 do
   begin
-    //20151113 stringgridの行数を超えてデータを読み込まないようにする
-    if i + 1 > StringGridCoordData.RowCount - 1 then
-    begin
-      MessageDlg(rsWarning, rsExceededMaxi2 + rsDoNotOverwri + rsPleaseUseANe,
-        mtWarning, [mbOK], 0);
-      Break;
-    end;
     StringGridCoordData.Cells[1, i + 1] := TetraSystem.Series[SelNum].RawComp4D[i].Name;
     for j := 0 to 3 do
     begin
@@ -682,7 +673,7 @@ procedure TFormMain.MenuItemAboutClick(Sender: TObject);
 //メニューのAboutクリック時
 //***************************************
 begin
-  MessageDlg(rsAboutTetraPl, 'TetraPlot 1.7.0' + #13#10 + '(C) Naoyuki Hatada.',
+  MessageDlg(rsAboutTetraPl, 'TetraPlot 1.7.1' + #13#10 + '(C) Naoyuki Hatada.',
     mtInformation, [mbOK], 0);
 end;
 
@@ -774,7 +765,7 @@ begin
   SpinEditAxisFontSize.Value := TetraSystem.AxisTitleSize;
   //Series List
   CheckListBoxSeries.Clear;
-  for i := 0 to TetraSystem.nSeries - 1 do
+  for i := 0 to TetraSystem.SeriesCount - 1 do
   begin
     CheckListBoxSeries.Items.Add(TetraSystem.Series[i].Name);
     CheckListBoxSeries.Checked[CheckListBoxSeries.Count - 1] :=

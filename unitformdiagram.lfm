@@ -10,7 +10,7 @@ object FormDiagram: TFormDiagram
   Constraints.MinWidth = 384
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
-  LCLVersion = '1.8.2.0'
+  LCLVersion = '2.2.0.4'
   Visible = True
   object PaintBoxDiagram: TPaintBox
     Left = 0
@@ -43,7 +43,6 @@ object FormDiagram: TFormDiagram
       Top = 9
       Width = 79
       Caption = 'Rotation Angle'
-      ParentColor = False
     end
     object ButtonLeft: TButton
       Left = 8
@@ -114,16 +113,16 @@ object FormDiagram: TFormDiagram
     DefaultExt = '.png'
     Filter = 'Portable Network Graphic (*.png)|*.png|Bitmaps (*.bmp)|*.bmp|Joint Picture Expert Group (*.jpg)|*.jpg|All files (*.*)|*.*'
     Options = [ofOverwritePrompt, ofExtensionDifferent, ofEnableSizing, ofViewDetail]
-    left = 223
-    top = 95
+    Left = 223
+    Top = 95
   end
   object PrintDialogDiagram: TPrintDialog
-    left = 294
-    top = 104
+    Left = 294
+    Top = 104
   end
   object PopupMenuDiagram: TPopupMenu
-    left = 56
-    top = 156
+    Left = 56
+    Top = 156
     object MenuItemPresets: TMenuItem
       Caption = 'Preset angles (Front - Top)'
       OnClick = MenuItemPresetsClick

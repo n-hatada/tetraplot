@@ -1,7 +1,6 @@
 unit UnitTetraPlotCore;
 
-{20181114 なるべくカプセル化するようコードを改良したい。現状では、サンプルファイル
-から系列を削除する際アクセス違反が発生する。}
+{20220602 コメントアウトされた古いコードを削除するなどコード整理}
 
 {$mode objfpc}{$H+}
 
@@ -11,8 +10,6 @@ uses
   Classes, SysUtils, Graphics, Math, DOM, XMLRead, XMLWrite, FileUtil, contnrs;
 
 const
-  //nMaxSeries = 1000;
-  //nMaxComposition = 1000;
   //図の余白
   LMargin = 50;
   RMargin = 50;
@@ -43,20 +40,21 @@ type //2D Vector
     X, Y: double;
   end;
 
-type //Series class (系列クラス)
+type
+  //前方宣言
+  TTetraSystem = class;
 
   { TSeries }
-
+  //Series class (系列クラス)
   TSeries = class(TObject)
   private
-    FOwnerTetraSystem: TObject;//このクラスを保有しているTTetraPlotクラス
+    FOwnerTetraSystem: TTetraSystem;//このクラスを保有しているTTetraPlotクラス
   public
     Name: string;//系列名
     RawComp4D: array of V4D;//生組成リスト(StringGridの内容)
     Comp3D: array of V3D;//3次元空間(world)に変換された組成座標
     nComposition: integer; //要素数
     Visible: boolean; //描画するかどうかを設定するフラグ
-
     //シンボルの書式
     SymbolVisible: boolean;
     SymbolType: integer;
@@ -72,7 +70,7 @@ type //Series class (系列クラス)
     //組成ラベルについて
     CompLabelVisible: boolean;
     CompLabelSize: integer;
-    constructor Create(AOwnerTetraSystem: TObject);
+    constructor Create(AOwnerTetraSystem: TTetraSystem);
     procedure GetComp3D; //4次元の生組成から3次元座標に変換
     procedure ClearData; //系列の情報を破棄する
     procedure AddComposition(const tName: string; const X, Y, Z, W: double);
@@ -103,42 +101,42 @@ type //System class
     TetrahedronWidth, TetrahedronHeight: integer;
 
     property Series[i: integer]: TSeries read GetSeries;//系列リスト
-    property nSeries: integer read GetNumOfSeries; //系列数
+    property SeriesCount: integer read GetNumOfSeries; //系列数
     constructor Create;//Initialization
-    function AddSeries: boolean;//系列を追加する関数
-    procedure RemoveSeries(SeriesNum: integer);//系列を削除するプロシージャ
+    function AddSeries: integer;//系列を追加する関数
+    procedure RemoveSeries(SeriesIndex: integer);//系列を削除するプロシージャ
+    //描画プロシージャ
     procedure DrawDiagram(Canv: TCanvas; Width, Height: integer;
       SizeZoom: double; ShowSmallTetrahedron: boolean;
       FontSizeFactorWithDistance: double);
-    //描画プロシージャ
-    procedure ConvWorldToView(Src: V3D; var Rslt: V2D);
     //3次元空間(world)の点座標をView座標(2次元)に変換
-    procedure RotateView(RotAxis: V3D; RotDeg: double);
+    procedure ConvWorldToView(Src: V3D; var Rslt: V2D);
     //View座標系を特定の軸RotAxisにそってRotDeg度だけ回転。回転軸は単位ベクトルであることを要求する。
+    procedure RotateView(RotAxis: V3D; RotDeg: double);
     procedure SaveData(Filename: string); //データを保存する
     procedure OpenData(Filename: string); //データを開く
     //World座標におけるVFrontベクトルが画面の手前に向くように、VUpベクトルが画面の
     //うえを向くように視点座標軸を設定するプロシージャ
     procedure RotateToPresetAngle(const VFront, VUp: V3D);
     //20151113 座標軸の順序交換プロシージャ
-    procedure TryExchangeAxes(const AxisNum1, AxisNum2: integer);
+    procedure TryExchangeAxes(const AxisIndex1, AxisIndex2: integer);
     //20181116 系列の順序交換プロシージャ
-    procedure TryExchangeSeries(const SeriesNum1, SeriesNum2: integer);
+    procedure TryExchangeSeries(const SeriesIndex1, SeriesIndex2: integer);
   end;
 
 //三次元ベクトルを単位ベクトル化するプロシージャ
-procedure NormalizeV3D(var tempV3D: V3D);
+procedure NormalizeV3D(var AV3D: V3D);
 //外積を返すプロシージャ
 procedure OP(V1, V2: V3D; var VResult: V3D);
 
 
 implementation
 //三次元ベクトルを単位ベクトル化するプロシージャ
-procedure NormalizeV3D(var tempV3D: V3D);
+procedure NormalizeV3D(var AV3D: V3D);
 var
   k: double;
 begin
-  with tempV3D do
+  with AV3D do
   begin
     k := sqrt(X * X + Y * Y + Z * Z);
     if k = 0 then
@@ -212,23 +210,21 @@ begin
     Y := 1;
     Z := -1;
   end;
-  //系列クラスの生成
+  //系列リストの生成
   FSeriesList := TFPObjectList.Create(True);
 end;
 
-function TTetraSystem.AddSeries: boolean;
-  //系列を追加する関数。成功すればTRUE,失敗すればFALSEが返る
+function TTetraSystem.AddSeries: integer;
+  //系列を追加する関数。追加した系列のインデックスが返る
 begin
-  Result := False;
-  FSeriesList.Add(TSeries.Create(Self));
-  Result := True;
+  Result := FSeriesList.Add(TSeries.Create(Self));
 end;
 
-procedure TTetraSystem.RemoveSeries(SeriesNum: integer);
+procedure TTetraSystem.RemoveSeries(SeriesIndex: integer);
 //系列を削除
 begin
   try
-    FSeriesList.Delete(SeriesNum);
+    FSeriesList.Delete(SeriesIndex);
   except
   end;
 end;
@@ -242,7 +238,7 @@ procedure TTetraSystem.DrawDiagram(Canv: TCanvas; Width, Height: integer;
 var
   i, j, k: integer;
   //View座標系での最大座標、最小座標を記録する
-  MaxX, MaxY, MinX, MinY, MaxZ, tempZ: double;
+  MaxX, MaxY, MinX, MinY, MaxZ: double;
   //View座標
   tV2D1, tV2D2: V2D;
   AxisView: array[0..3] of V2D;//View座標での四面体頂点のX,Y値
@@ -302,7 +298,7 @@ begin
   Canv.Brush.Color := clWhite;
   Canv.FillRect(0, 0, Width - 1, Height - 1);
   //組成データのプロット
-  for i := 0 to nSeries - 1 do
+  for i := 0 to SeriesCount - 1 do
   begin
     //可視状態に設定されていない系列はスキップ
     if not (Series[i].Visible) then
@@ -397,7 +393,7 @@ begin
       end;
     end;
   end;
-  for i := 0 to nSeries - 1 do
+  for i := 0 to SeriesCount - 1 do
   begin
     //可視状態に設定されていない系列はスキップ
     if not (Series[i].Visible) then
@@ -409,8 +405,6 @@ begin
       //とりあえずブラシの設定
       //ブラシを透明に
       Canv.Brush.Style := bsClear;
-      //Canv.Font.Size:=Trunc(Series[i].CompLabelSize*SizeZoom);
-      //Canv.Font.Size := Series[i].CompLabelSize;
       for j := 0 to Series[i].nComposition - 1 do
       begin
         ConvWorldToView(Series[i].Comp3D[j], tV2D1);
@@ -426,15 +420,11 @@ begin
 
   //ブラシを透明に
   Canv.Brush.Style := bsClear;
-  //フォントの設定
-  //Canv.Font.Size:=Trunc(AxisTitleSize*SizeZoom);
-  //Canv.Font.Size := AxisTitleSize;
   //座標軸の描画
   Canv.Pen.Color := clBlack;
   Canv.Pen.Width := Trunc(1 * SizeZoom);
   for i := 0 to 3 do
   begin
-    //ConvWorldToView(Axis[i], tV2D1);
     ViewToScr(AxisView[i], TP[0]);
     for j := i + 1 to 3 do
     begin
@@ -493,7 +483,7 @@ end;
 { TSeries }
 
 
-constructor TSeries.Create(AOwnerTetraSystem: TObject);
+constructor TSeries.Create(AOwnerTetraSystem: TTetraSystem);
 begin
   FOwnerTetraSystem := AOwnerTetraSystem;
   nComposition := 0;
@@ -527,7 +517,7 @@ begin
       NormFactor := CoordVals[0] + CoordVals[1] + CoordVals[2] + CoordVals[3];
     end;
     //4D -> 3D変換
-    with TTetraSystem(FOwnerTetraSystem) do
+    with FOwnerTetraSystem do
     begin
       Comp3D[Ctr].Name := RawComp4D[Ctr].Name;
       Comp3D[Ctr].X := RawComp4D[Ctr].CoordVals[0] * Axis[0].X +
@@ -696,7 +686,6 @@ var
   begin
     tNode := Doc.CreateElement(TextNodeName);
     tNode.AppendChild(Doc.CreateTextNode(Text));
-    //ParentNode.ChildNodes.Item[ParentNode.ChildNodes.Count].AppendChild(tNode);
     ParentNode.AppendChild(tNode);
   end;
 
@@ -711,13 +700,13 @@ begin
   //"Data"ノード(要素)を作成する
   DataNode := Doc.CreateElement('Data');
   //"Data"ノードの属性に系列の数を設定する
-  //TDOMElement(DataNode).SetAttribute('NumOfSeries', IntToStr(nSeries));
+  //TDOMElement(DataNode).SetAttribute('NumOfSeries', IntToStr(SeriesCount));
 
   //"Data"ノードをルート要素の下の要素として保存する
   RootNode.Appendchild(DataNode);
 
   //"Data"ノードの中に系列の数などを保存
-  CreateTextNodeFast(DataNode, 'NumOfSeries', IntToStr(nSeries));
+  CreateTextNodeFast(DataNode, 'NumOfSeries', IntToStr(SeriesCount));
   CreateTextNodeFast(DataNode, 'AxisTitleVisible', BoolToStr(AxisTitleVisible));
   CreateTextNodeFast(DataNode, 'AxisTitleSize', IntToStr(AxisTitleSize));
   //軸のデータを保存
@@ -727,18 +716,12 @@ begin
   end;
 
   //系列のデータを順次保存
-  for i := 0 to nSeries - 1 do
+  for i := 0 to SeriesCount - 1 do
   begin
     //SeriesNodeを作成
     SeriesNode := Doc.CreateElement('Series');
-    //SeriesNodeの下に属性を設定
-    {TDOMElement(SeriesNode).SetAttribute('Title', Series[i].Name));//系列名
-    TDOMElement(SeriesNode).SetAttribute('NumOfCompositions', IntToStr(Series[i].nComposition));//系列に属する組成データの個数
-    TDOMElement(SeriesNode).SetAttribute('Visible', BoolToStr(Series[i].Visible));//表示状態}
-
     //SeriesNodeをDataNodeの下に保存する
     DataNode.AppendChild(SeriesNode);
-
     //SeriesNodeに情報を保存
     CreateTextNodeFast(SeriesNode, 'Title', Series[i].Name);//系列名;
     CreateTextNodeFast(SeriesNode, 'NumOfCompositions',
@@ -778,7 +761,6 @@ begin
     end;
   end;
   //XMLファイルに書き込み
-  //WriteXMLFile(Doc, UTF8ToSys(Filename));
   WriteXMLFile(Doc, Filename);
   //メモリ解放
   Doc.Free;
@@ -789,7 +771,7 @@ procedure TTetraSystem.OpenData(Filename: string);
 var
   Doc: TXMLDocument;//文書を格納する変数
   Child: TDOMNode;//ノードを格納する変数
-  AxisNum, SeriesNum, CompNum, CValNum: integer;
+  AxisNum, CompNum, CValNum: integer;
   //何個目のデータを読み取っているか記録
 
   //Compositionノードを解釈するプロシージャ
@@ -830,8 +812,6 @@ var
   var
     tmpChild: TDOMNode;
   begin
-    //if SeriesNum > nSeries - 1 then
-    //  exit;
     CompNum := 0;
     //子ノードを読みに行く
     tmpChild := tmpNode.FirstChild;
@@ -953,7 +933,6 @@ var
   begin
     //'Data'ノードの場合
     AxisNum := 0;
-    SeriesNum := 0;
     //子ノードを読みに行く
     tmpChild := tmpNode.FirstChild;
     while Assigned(tmpChild) do
@@ -971,7 +950,6 @@ var
       if tmpChild.NodeName = 'NumOfSeries' then
       begin
         //NumOfSeriesノードの場合
-        //nSeries := StrToInt(tmpChild.FirstChild.NodeValue);
       end;
       if tmpChild.NodeName = 'AxisTitleVisible' then
       begin
@@ -987,18 +965,14 @@ var
         //Seriesノードの場合
         FSeriesList.Add(TSeries.Create(Self));
         ReadSeriesNode(tmpChild);
-        //SeriesNum := SeriesNum + 1;
       end;
       tmpChild := tmpChild.NextSibling;
     end;
   end;
 
 begin
-  //nSeries := 0;
   FSeriesList.Clear;
   //XML読み込み
-  //XMLファイルを読み書きする際は、ファイル名の文字コード変換をしないとエラーになる
-  //ReadXMLFile(Doc, UTF8ToSys(Filename));
   ReadXMLFile(Doc, Filename);
   //解釈
   Child := Doc.DocumentElement.FirstChild;
@@ -1008,7 +982,6 @@ begin
       ReadDataNode(Child);
     Child := Child.NextSibling;
   end;
-
   //メモリ解放
   Doc.Free;
 end;
@@ -1034,38 +1007,38 @@ begin
 end;
 
 //座標軸の順序交換プロシージャ
-procedure TTetraSystem.TryExchangeAxes(const AxisNum1, AxisNum2: integer);
+procedure TTetraSystem.TryExchangeAxes(const AxisIndex1, AxisIndex2: integer);
 var
   tempStr: string;
   tempDbl: double;
   i, j: integer;
 begin
-  if (Min(AxisNum1, AxisNum2) < 0) or (Max(AxisNum1, AxisNum2) > 3) then
+  if (Min(AxisIndex1, AxisIndex2) < 0) or (Max(AxisIndex1, AxisIndex2) > 3) then
     exit;
   //軸タイトルを入れ替える
-  tempStr := Axis[AxisNum1].Name;
-  Axis[AxisNum1].Name := Axis[AxisNum2].Name;
-  Axis[AxisNum2].Name := tempStr;
+  tempStr := Axis[AxisIndex1].Name;
+  Axis[AxisIndex1].Name := Axis[AxisIndex2].Name;
+  Axis[AxisIndex2].Name := tempStr;
   //全系列の座標を入れ替える
-  for i := 0 to nSeries - 1 do
+  for i := 0 to SeriesCount - 1 do
   begin
     with Series[i] do
     begin
       for j := 0 to nComposition - 1 do
       begin
-        tempDbl := RawComp4D[j].CoordVals[AxisNum1];
-        RawComp4D[j].CoordVals[AxisNum1] := RawComp4D[j].CoordVals[AxisNum2];
-        RawComp4D[j].CoordVals[AxisNum2] := tempDbl;
+        tempDbl := RawComp4D[j].CoordVals[AxisIndex1];
+        RawComp4D[j].CoordVals[AxisIndex1] := RawComp4D[j].CoordVals[AxisIndex2];
+        RawComp4D[j].CoordVals[AxisIndex2] := tempDbl;
       end;
       GetComp3D;
     end;
   end;
 end;
 
-procedure TTetraSystem.TryExchangeSeries(const SeriesNum1, SeriesNum2: integer);
+procedure TTetraSystem.TryExchangeSeries(const SeriesIndex1, SeriesIndex2: integer);
 begin
   try
-    FSeriesList.Exchange(SeriesNum1, SeriesNum2);
+    FSeriesList.Exchange(SeriesIndex1, SeriesIndex2);
   except
 
   end;

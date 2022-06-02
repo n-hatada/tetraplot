@@ -1,14 +1,5 @@
 msgid ""
-msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Project-Id-Version: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: Naoyuki\n"
-"Language-Team: \n"
-"MIME-Version: 1.0\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
+msgstr "Content-Type: text/plain; charset=UTF-8"
 
 #: tformdiagram.buttondown.caption
 msgid "↓"
@@ -96,191 +87,189 @@ msgstr ""
 
 #: tformmain.buttonaddrows.caption
 msgid "Add 50 rows"
-msgstr "50行追加"
+msgstr ""
 
 #: tformmain.buttonaddseries.caption
 msgid "Add"
-msgstr "追加"
+msgstr ""
 
 #: tformmain.buttonaxismovedown.caption
 msgctxt "tformmain.buttonaxismovedown.caption"
 msgid "Down"
-msgstr "下へ"
+msgstr ""
 
 #: tformmain.buttonaxismoveup.caption
 msgctxt "tformmain.buttonaxismoveup.caption"
 msgid "Up"
-msgstr "上へ"
+msgstr ""
 
 #: tformmain.buttonremoveseries.caption
 msgid "Remove"
-msgstr "削除"
+msgstr ""
 
 #: tformmain.buttonseriesmovedown.caption
 msgctxt "tformmain.buttonseriesmovedown.caption"
 msgid "Down"
-msgstr "下へ"
+msgstr ""
 
 #: tformmain.buttonseriesmoveup.caption
 msgctxt "tformmain.buttonseriesmoveup.caption"
 msgid "Up"
-msgstr "上へ"
+msgstr ""
 
 #: tformmain.caption
-msgctxt "tformmain.caption"
 msgid "TetraPlot"
-msgstr "TetraPlot"
+msgstr ""
 
 #: tformmain.checkboxaxistitlevisible.caption
-msgctxt "TFORMMAIN.CHECKBOXAXISTITLEVISIBLE.CAPTION"
+msgctxt "tformmain.checkboxaxistitlevisible.caption"
 msgid "Show"
-msgstr "表示"
+msgstr ""
 
 #: tformmain.checkboxchangefontsizewithdistance.caption
 msgid "Change font size with distance"
-msgstr "距離に応じて文字サイズを変化"
+msgstr ""
 
 #: tformmain.checkboxcomplabelvisible.caption
-msgctxt "TFORMMAIN.CHECKBOXCOMPLABELVISIBLE.CAPTION"
+msgctxt "tformmain.checkboxcomplabelvisible.caption"
 msgid "Show"
-msgstr "表示"
+msgstr ""
 
 #: tformmain.checkboxlineclose.caption
 msgid "Close"
-msgstr "閉じる"
+msgstr ""
 
 #: tformmain.checkboxlinevisible.caption
-msgctxt "TFORMMAIN.CHECKBOXLINEVISIBLE.CAPTION"
+msgctxt "tformmain.checkboxlinevisible.caption"
 msgid "Show"
-msgstr "表示"
+msgstr ""
 
 #: tformmain.checkboxsmalltetrahedron.caption
 msgid "Show small tetrahedron"
-msgstr "小さい四面体を表示"
+msgstr ""
 
 #: tformmain.checkboxsymbolvisible.caption
-msgctxt "TFORMMAIN.CHECKBOXSYMBOLVISIBLE.CAPTION"
+msgctxt "tformmain.checkboxsymbolvisible.caption"
 msgid "Show"
-msgstr "表示"
+msgstr ""
 
 #: tformmain.editseriestitle.editlabel.caption
 msgctxt "tformmain.editseriestitle.editlabel.caption"
 msgid "Series title"
-msgstr "系列名"
+msgstr ""
 
 #: tformmain.groupboxaxistitles.caption
 msgid "Axis titles"
-msgstr "軸の名前"
+msgstr ""
 
 #: tformmain.groupboxcomplabel.caption
 msgid "Label"
-msgstr "名前"
+msgstr ""
 
 #: tformmain.groupboxline.caption
 msgid "Line"
-msgstr "線"
+msgstr ""
 
 #: tformmain.groupboxseriesdetails.caption
 msgid "Details of the selected series"
-msgstr "選択された系列の詳細"
+msgstr ""
 
 #: tformmain.groupboxserieslist.caption
 msgid "Series list"
-msgstr "系列一覧"
+msgstr ""
 
 #: tformmain.groupboxsymbol.caption
 msgid "Symbol"
-msgstr "記号"
+msgstr ""
 
 #: tformmain.label1.caption
 msgid "Type"
-msgstr "種類"
+msgstr ""
 
 #: tformmain.label10.caption
 msgid "Mode"
-msgstr "モード"
+msgstr ""
 
 #: tformmain.label2.caption
-msgctxt "TFORMMAIN.LABEL2.CAPTION"
+msgctxt "tformmain.label2.caption"
 msgid "Size"
-msgstr "サイズ"
+msgstr ""
 
 #: tformmain.label3.caption
 msgid "Coordinate data (automatically normalized)"
-msgstr "座標値 (自動的に規格化されます)"
+msgstr ""
 
 #: tformmain.label4.caption
 msgid "Font size"
-msgstr "文字サイズ"
+msgstr ""
 
 #: tformmain.label5.caption
 msgid "Edge color"
-msgstr "縁の色"
+msgstr ""
 
 #: tformmain.label6.caption
 msgid "Fill color"
-msgstr "内部の色"
+msgstr ""
 
 #: tformmain.label7.caption
 msgid "Width"
-msgstr "太さ"
+msgstr ""
 
 #: tformmain.label8.caption
 msgid "Color"
-msgstr "色"
+msgstr ""
 
 #: tformmain.label9.caption
-msgctxt "TFORMMAIN.LABEL9.CAPTION"
+msgctxt "tformmain.label9.caption"
 msgid "Size"
-msgstr "サイズ"
+msgstr ""
 
 #: tformmain.menuitemabout.caption
 msgid "About (&A)"
-msgstr "バージョン情報 (&A)"
+msgstr ""
 
 #: tformmain.menuitemfile.caption
 msgid "File (&F)"
-msgstr "ファイル (&F)"
+msgstr ""
 
 #: tformmain.menuitemhelp.caption
 msgid "Help (&H)"
-msgstr "ヘルプ (&H)"
+msgstr ""
 
 #: tformmain.menuitemopen.caption
 msgid "Open (&O)"
-msgstr "開く (&O)"
+msgstr ""
 
 #: tformmain.menuitemsave.caption
 msgid "Save As (&S)"
-msgstr "名前を付けて保存 (&S)"
+msgstr ""
 
 #: unitformmain.rsabouttetrapl
-msgctxt "unitformmain.rsabouttetrapl"
 msgid "About TetraPlot"
-msgstr "バージョン情報"
+msgstr ""
 
 #: unitformmain.rsaxis
 msgid "Axis"
-msgstr "軸"
+msgstr ""
 
 #: unitformmain.rslabeloptional
 msgid "Label (optional)"
-msgstr "名前 (任意)"
+msgstr ""
 
 #: unitformmain.rspleaseuseane
 msgid "Please use a newer version of TetraPlot."
-msgstr "最新版のTetraPlotを使用してください。"
+msgstr ""
 
 #: unitformmain.rsquittetraplo
 msgid "Quit TetraPlot?"
-msgstr "TetraPlotを終了しますか？"
+msgstr ""
 
 #: unitformmain.rsseriestitle
 msgctxt "unitformmain.rsseriestitle"
 msgid "Series title"
-msgstr "系列名"
+msgstr ""
 
 #: unitformmain.rswarning
 msgid "Warning"
-msgstr "警告"
+msgstr ""
 

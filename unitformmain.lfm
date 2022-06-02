@@ -11,7 +11,7 @@ object FormMain: TFormMain
   Menu = MainMenuMain
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
-  LCLVersion = '1.8.2.0'
+  LCLVersion = '2.2.0.4'
   Visible = True
   object GroupBoxAxisTitles: TGroupBox
     Left = 8
@@ -28,7 +28,6 @@ object FormMain: TFormMain
       Top = 105
       Width = 46
       Caption = 'Font size'
-      ParentColor = False
     end
     object StringGridAxisTitles: TStringGrid
       Left = 6
@@ -158,7 +157,6 @@ object FormMain: TFormMain
       Top = 0
       Width = 227
       Caption = 'Coordinate data (automatically normalized)'
-      ParentColor = False
     end
     object StringGridCoordData: TStringGrid
       Left = 200
@@ -179,16 +177,9 @@ object FormMain: TFormMain
       Height = 23
       Top = 14
       Width = 184
-      EditLabel.AnchorSideLeft.Control = EditSeriesTitle
-      EditLabel.AnchorSideRight.Control = EditSeriesTitle
-      EditLabel.AnchorSideRight.Side = asrBottom
-      EditLabel.AnchorSideBottom.Control = EditSeriesTitle
-      EditLabel.Left = 8
       EditLabel.Height = 15
-      EditLabel.Top = -4
       EditLabel.Width = 184
       EditLabel.Caption = 'Series title'
-      EditLabel.ParentColor = False
       TabOrder = 0
       OnExit = EditSeriesTitleExit
     end
@@ -207,7 +198,6 @@ object FormMain: TFormMain
         Top = 22
         Width = 24
         Caption = 'Type'
-        ParentColor = False
       end
       object Label2: TLabel
         Left = 6
@@ -215,7 +205,6 @@ object FormMain: TFormMain
         Top = 54
         Width = 20
         Caption = 'Size'
-        ParentColor = False
       end
       object Label5: TLabel
         Left = 54
@@ -223,7 +212,6 @@ object FormMain: TFormMain
         Top = 54
         Width = 56
         Caption = 'Edge color'
-        ParentColor = False
       end
       object Label6: TLabel
         Left = 110
@@ -231,7 +219,6 @@ object FormMain: TFormMain
         Top = 54
         Width = 45
         Caption = 'Fill color'
-        ParentColor = False
       end
       object ColorButtonEdgeColor: TColorButton
         Left = 54
@@ -303,7 +290,6 @@ object FormMain: TFormMain
         Top = 56
         Width = 32
         Caption = 'Width'
-        ParentColor = False
       end
       object Label8: TLabel
         Left = 54
@@ -311,7 +297,6 @@ object FormMain: TFormMain
         Top = 56
         Width = 28
         Caption = 'Color'
-        ParentColor = False
       end
       object ColorButtonLineColor: TColorButton
         Left = 54
@@ -358,7 +343,6 @@ object FormMain: TFormMain
         Top = 24
         Width = 31
         Caption = 'Mode'
-        ParentColor = False
       end
       object ComboBoxLineConnectionMode: TComboBox
         Left = 48
@@ -391,7 +375,6 @@ object FormMain: TFormMain
         Top = 22
         Width = 20
         Caption = 'Size'
-        ParentColor = False
       end
       object CheckBoxCompLabelVisible: TCheckBox
         Left = 6
@@ -448,8 +431,8 @@ object FormMain: TFormMain
     TabOrder = 4
   end
   object MainMenuMain: TMainMenu
-    left = 168
-    top = 72
+    Left = 168
+    Top = 72
     object MenuItemFile: TMenuItem
       Caption = 'File (&F)'
       object MenuItemOpen: TMenuItem
@@ -473,14 +456,14 @@ object FormMain: TFormMain
     DefaultExt = '.tpxml'
     Filter = 'TetraPlot File (*.tpxml)|*.tpxml'
     Options = [ofFileMustExist, ofEnableSizing, ofViewDetail]
-    left = 96
-    top = 80
+    Left = 96
+    Top = 80
   end
   object SaveDialogMain: TSaveDialog
     DefaultExt = '.tpxml'
     Filter = 'TetraPlot File (*.tpxml)|*.tpxml'
     Options = [ofOverwritePrompt, ofEnableSizing, ofViewDetail]
-    left = 248
-    top = 72
+    Left = 248
+    Top = 72
   end
 end

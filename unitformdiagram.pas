@@ -6,8 +6,8 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  ExtCtrls, StdCtrls, ComCtrls, ExtDlgs, ButtonPanel, EditBtn, Spin,
-  PrintersDlgs, UnitTetraPlotCore,Printers,math,Translations, Menus;
+  ExtCtrls, StdCtrls, ComCtrls, ExtDlgs, Spin,
+  PrintersDlgs, UnitTetraPlotCore,Printers,math,{Translations,} Menus;
 
 type
 
@@ -126,9 +126,6 @@ end;
 procedure TFormDiagram.ButtonSaveImageClick(Sender: TObject);
 //図の保存
 var
-  //MF:TlmfImage;  //保存用メタファイル
-  //MFCanvas:TlmfCanvas;
-  MFStream:TFileStream;
   JPG:TJPEGImage;//保存用JPEG
   PNG:TPortableNetworkGraphic; //保存用PNG
 begin
