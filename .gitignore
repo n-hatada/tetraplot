@@ -13,3 +13,5 @@ backup/unittetraplotcore.pas
 backup/unitformmain.lfm
 backup/unitformmain.pas
 *.lrj
+backup/unitformdiagram.lfm
+backup/unitformdiagram.pas
