@@ -80,6 +80,8 @@ const
 
 implementation
 
+{$R *.lfm}
+
 uses UnitFormMain;
 
 { TFormDiagram }
@@ -320,12 +322,6 @@ begin
 end;
 
 
-
-
-
-
-initialization
-  {$I unitformdiagram.lrs}
 
 end.
 

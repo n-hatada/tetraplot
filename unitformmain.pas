@@ -182,7 +182,7 @@ resourcestring
   rsPleaseUseANe = 'Please use a newer version of TetraPlot.';
 
 implementation
-
+{$R *.lfm}
 uses UnitFormDiagram;
 
 { TFormMain }
@@ -822,9 +822,5 @@ begin
     end;
   end;
 end;
-
-
-initialization
-  {$I unitformmain.lrs}
 
 end.
