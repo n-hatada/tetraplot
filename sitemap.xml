@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="https://n-hatada.github.io/tetraplot/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<url>
+<loc>https://n-hatada.github.io/tetraplot/</loc>
+</url>
+<url>
+<loc>https://n-hatada.github.io/tetraplot/english.html</loc>
+<lastmod>2022-06-08T21:10:33+09:00</lastmod>
+<image:image>
+<image:loc>https://n-hatada.github.io/tetraplot/media\posts\2/TetraPlot160en.png</image:loc>
+<image:title><![CDATA[Screenshot]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://n-hatada.github.io/tetraplot/media\posts\2/gallery/screenshot01en-thumbnail.PNG</image:loc>
+<image:title><![CDATA[]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://n-hatada.github.io/tetraplot/media\posts\2/gallery/screenshot02en-thumbnail.PNG</image:loc>
+<image:title><![CDATA[]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://n-hatada.github.io/tetraplot/media\posts\2/gallery/La-P-O-H.gif</image:loc>
+<image:title><![CDATA[La-P-O-H system]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://n-hatada.github.io/tetraplot/media\posts\2/gallery/BaO-ZrO2-YO15-NiO.gif</image:loc>
+<image:title><![CDATA[BaO-ZrO2-YO1.5-NiO system]]></image:title>
+</image:image>
+</url>
+<url>
+<loc>https://n-hatada.github.io/tetraplot/japanese.html</loc>
+<lastmod>2022-06-08T21:10:47+09:00</lastmod>
+<image:image>
+<image:loc>https://n-hatada.github.io/tetraplot/media\posts\3/TetraPlot160jp.png</image:loc>
+<image:title><![CDATA[Screenshot]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://n-hatada.github.io/tetraplot/media\posts\3/gallery/screenshot01jp-thumbnail.PNG</image:loc>
+<image:title><![CDATA[]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://n-hatada.github.io/tetraplot/media\posts\3/gallery/screenshot02jp-thumbnail.PNG</image:loc>
+<image:title><![CDATA[]]></image:title>
+</image:image>
+</url>
+</urlset>
