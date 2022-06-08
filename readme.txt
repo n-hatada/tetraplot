@@ -1,6 +1,6 @@
 			=======================
 			TetraPlot Version 1.7.1
-				   Jun. 3, 2022
+				   Jun. 8, 2022
 				 Naoyuki Hatada
 			=======================
 
@@ -42,7 +42,7 @@ This software is licensed under the MIT License.
 =================
 Version 1.7.1
 -Some unused code is removed.
--Now available on GitHub.
+-Now available on GitHub as an open source software.
 
 Version 1.7.0
 -Font size can be changed according to the distance from viewpoint.
