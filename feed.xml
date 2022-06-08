@@ -3,7 +3,7 @@
     <title>TetraPlot</title>
     <link href="https://n-hatada.github.io/tetraplot/feed.xml" rel="self" />
     <link href="https://n-hatada.github.io/tetraplot" />
-    <updated>2022-06-08T21:10:47+09:00</updated>
+    <updated>2022-06-08T22:05:42+09:00</updated>
     <author>
         <name>Naoyuki Hatada</name>
     </author>
@@ -17,7 +17,7 @@
         <link href="https://n-hatada.github.io/tetraplot/japanese.html"/>
         <id>https://n-hatada.github.io/tetraplot/japanese.html</id>
 
-        <updated>2022-06-08T21:10:47+09:00</updated>
+        <updated>2022-06-08T22:05:42+09:00</updated>
             <summary>
                 <![CDATA[
                     概要 TetraPlotは四元系の化学組成を正四面体中にプロットするためのプログラムです。 ダウンロードしたセットアッププログラムを実行します。 畑田 直行 TetraPlotはMITライセンスで公開します。 Naoyuki Hatada, TetraPlot, https://github.com/n-hatada/tetraplot, accessed Month Date, Year. TetraPlotがオープンソースソフトウェアになりました。バージョン1.7.1をGitHubで公開しました。 TetraPlot 1.7.0を公開しました。
@@ -52,10 +52,10 @@
 </div></div>
 <h2>作図例</h2>
 <div class="gallery-wrapper"><div class="gallery"  data-is-empty="false" data-translation="Add images" data-columns="2">
-<figure class="gallery__item"><a href="file:///C:/Users/Naoyuki/ownCloud_eeebox/Publii/sites/tetraplot/input/media/posts/2/gallery/La-P-O-H.gif" data-size="491x351"><img loading="lazy" src="file:///C:/Users/Naoyuki/ownCloud_eeebox/Publii/sites/tetraplot/input/media/posts/2/gallery/La-P-O-H.gif" alt="La-P-O-H 系"></a>
+<figure class="gallery__item"><a href="https://n-hatada.github.io/tetraplot/media/posts/3/gallery/La-P-O-H.gif" data-size="491x351"><img loading="lazy" src="https://n-hatada.github.io/tetraplot/media/posts/3/gallery/La-P-O-H.gif" alt="La-P-O-H 系"></a>
 <figcaption>La-P-O-H 系 (La-P-O-H系の四面体の中で、La2O3-P2O5-H2O 擬三元系を赤色の三角形で示し、それに属する化合物を緑色の点で示しています。)</figcaption>
 </figure>
-<figure class="gallery__item"><a href="file:///C:/Users/Naoyuki/ownCloud_eeebox/Publii/sites/tetraplot/input/media/posts/2/gallery/BaO-ZrO2-YO15-NiO.gif" data-size="491x351"><img loading="lazy" src="file:///C:/Users/Naoyuki/ownCloud_eeebox/Publii/sites/tetraplot/input/media/posts/2/gallery/BaO-ZrO2-YO15-NiO.gif" alt="BaO-ZrO2-YO1.5-NiO 系"></a>
+<figure class="gallery__item"><a href="https://n-hatada.github.io/tetraplot/media/posts/3/gallery/BaO-ZrO2-YO15-NiO.gif" data-size="491x351"><img loading="lazy" src="https://n-hatada.github.io/tetraplot/media/posts/3/gallery/BaO-ZrO2-YO15-NiO.gif" alt="BaO-ZrO2-YO1.5-NiO 系"></a>
 <figcaption>BaO-ZrO2-YO1.5-NiO 系 (BaO-ZrO2-YO1.5-NiO系の四面体の中で、4相平衡試料の局所組成をEPMAによって分析した結果をプロットした図です。)</figcaption>
 </figure>
 </div></div>
