@@ -37,6 +37,10 @@ TetraPlot currently does not have a function to export vector graphics. However,
 
  Version History
 =================
+Version 1.7.1
+-Some unused code is removed.
+-Now available on GitHub as an open source software.
+
 Version 1.7.0
 -Font size can be changed according to the distance from viewpoint.
 
