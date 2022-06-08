@@ -3,7 +3,6 @@
 *.o
 *.obj
 *.res
-*.exe
 *.lrs
 *.ppu
 *.rsj
