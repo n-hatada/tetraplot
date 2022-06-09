@@ -3,7 +3,7 @@
     <title>TetraPlot</title>
     <link href="https://n-hatada.github.io/tetraplot/feed.xml" rel="self" />
     <link href="https://n-hatada.github.io/tetraplot" />
-    <updated>2022-06-09T17:08:20+09:00</updated>
+    <updated>2022-06-09T19:02:44+09:00</updated>
     <author>
         <name>Naoyuki Hatada</name>
     </author>
@@ -17,7 +17,7 @@
         <link href="https://n-hatada.github.io/tetraplot/english.html"/>
         <id>https://n-hatada.github.io/tetraplot/english.html</id>
 
-        <updated>2022-06-09T17:08:20+09:00</updated>
+        <updated>2022-06-09T19:02:36+09:00</updated>
             <summary>
                 <![CDATA[
                     Overview TetraPlot is a tiny program for plotting chemical compositions in 4 component systems on equilateral tetrahedra. Run the downloaded&hellip;
@@ -68,7 +68,7 @@
 <h2>License</h2>
 <p class="text-small color-fg-muted mb-0 lh-condensed-ultra">TetraPlot is licensed under the MIT License.</p>
 <h2>Cite TetraPlot</h2>
-<p>Naoyuki Hatada, TetraPlot, <a href="https://github.com/n-hatada/tetraplot">https://github.com/n-hatada/tetraplot</a>, accessed Month Date, Year.</p>
+<p>Naoyuki Hatada, TetraPlot - Software for Plotting Chemical Compositions in 4 Component Systems, <a href="https://n-hatada.github.io/tetraplot">https://n-hatada.github.io/tetraplot</a>, accessed Month Date, Year.</p>
 <h2>News</h2>
 <h3>June 8, 2022</h3>
 <p>TetraPlot is now an open source software. Version 1.7.1 is released on GitHub.</p>
@@ -85,10 +85,10 @@
         <link href="https://n-hatada.github.io/tetraplot/japanese.html"/>
         <id>https://n-hatada.github.io/tetraplot/japanese.html</id>
 
-        <updated>2022-06-09T17:06:58+09:00</updated>
+        <updated>2022-06-09T19:02:44+09:00</updated>
             <summary>
                 <![CDATA[
-                    概要 TetraPlotは四元系の化学組成を正四面体中にプロットするためのプログラムです。 ダウンロードしたセットアッププログラムを実行します。 下に画像が表示されない場合は、ページを再読み込みしてみてください。 畑田 直行 TetraPlotはMITライセンスで公開します。 Naoyuki Hatada, TetraPlot, https://github.com/n-hatada/tetraplot, accessed Month Date, Year. TetraPlotがオープンソースソフトウェアになりました。バージョン1.7.1をGitHubで公開しました。 TetraPlot 1.7.0を公開しました。
+                    概要 TetraPlotは四元系の化学組成を正四面体中にプロットするためのプログラムです。 ダウンロードしたセットアッププログラムを実行します。 下に画像が表示されない場合は、ページを再読み込みしてみてください。 畑田 直行 TetraPlotはMITライセンスで公開します。 Naoyuki Hatada, TetraPlot - Software for Plotting Chemical Compositions in 4 Component Systems,&hellip;
                 ]]>
             </summary>
         <content type="html">
@@ -137,7 +137,7 @@
 <h2>ライセンス</h2>
 <p class="text-small color-fg-muted mb-0 lh-condensed-ultra">TetraPlotはMITライセンスで公開します。</p>
 <h2>TetraPlotの引用方法</h2>
-<p>Naoyuki Hatada, TetraPlot, <a href="https://github.com/n-hatada/tetraplot">https://github.com/n-hatada/tetraplot</a>, accessed Month Date, Year.</p>
+<p>Naoyuki Hatada, TetraPlot - Software for Plotting Chemical Compositions in 4 Component Systems, <a href="https://n-hatada.github.io/tetraplot">https://n-hatada.github.io/tetraplot</a>, accessed Month Date, Year.</p>
 <h2>お知らせ</h2>
 <h3>2022年6月8日</h3>
 <p>TetraPlotがオープンソースソフトウェアになりました。バージョン1.7.1をGitHubで公開しました。</p>
